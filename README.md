@@ -1,4 +1,4 @@
-# python-practice
+# Python Practice
 
 Please for the love of dog work
 
