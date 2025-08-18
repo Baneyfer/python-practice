@@ -22,14 +22,56 @@
 # 3 Salad $4.99
 # 4 Drink $1.99
 
+# menu = {
+#     "Burger" : 5.99,
+#     "Pizza" : 8.49,
+#     "Salad" : 4.99, 
+#     "Drink" : 1.99
+# }
+
+# item_number = 1
+# for item, price in menu.items():
+#     print(f'{item_number}, {item}, ${price}')
+#     item_number += 1
+order = {
+    }
+
 menu = {
-    "Burger" : 5.99,
-    "Pizza" : 8.49,
-    "Salad" : 4.99, 
-    "Drink" : 1.99
+    1 : {"name":"Burger","price":5.99},
+    2 : {"name":"Pizza","price":8.49},
+    3 : {"name":"Salad","price":4.99},
+    4 : {"name":"Drink","price":1.99},
 }
 
-item_number = 1
-for item, price in menu.items():
-    print(f'{item_number}, {item}, ${price}')
-    item_number += 1
+order_total = 0
+
+# Print welcome statement
+print("Welcome to Python Burger!")
+
+# Initiate WHILE loop 
+while True:
+
+#  Display menu items - (print statement) - for loop initiate menu_items
+    print("Menu")
+    for item_no, details in menu.items():
+        print(f"{item_no}. {details['name']} - ${details['price']}")
+
+# Prompt menu selection (user input)
+    item_choice = (int(input('Choose item number: ')))
+
+# Prompt qty 
+    item_qty = (int(input('Enter quantity: ')))
+#add order
+    
+    if item_choice in menu:
+        item_name = menu[item_choice]['name']
+        
+        if item_name in order:
+          order[item_name] += item_qty  
+        else:
+            order[item_name] = item_qty
+    
+    else:
+        print("That is not a valid menu item.")
+            
+    print(order)
