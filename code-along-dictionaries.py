@@ -82,3 +82,24 @@ while True:
     
     if continue_order != "y":
         break
+    
+#Calculate total
+
+#use a for loop to go over orders dictionary
+    #multiply item_qty and item price 
+    #item_qty from orders dictionary
+    #set item_price variable -get from menu dictionary
+    #item_total = item_price * item_qty
+    #print item_name, item_qty, item_total
+    #add item_total to order_total 
+    
+for name, quantity in order.items():
+    
+    print(name, quantity)
+
+
+
+#print order_total
+
+
+#Display final summary
