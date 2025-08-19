@@ -46,3 +46,26 @@ while True:
     
     if continue_order != "y":
         break
+    
+name_price = {d["name"]: d["price"] for d in menu.values()}
+
+#Calculate total
+print("Order Summary:")
+
+#use a for loop to go over orders dictionary
+    #multiply item_qty and item price 
+    #item_qty from orders dictionary
+    #set item_price variable -get from menu dictionary
+    #item_total = item_price * item_qty
+    #print item_name, item_qty, item_total
+    #add item_total to order_total 
+#print order_total 
+order_total = 0.0
+for name, quantity in order.items():
+    price = name_price[name]
+    item_total = price * quantity
+    order_total += item_total
+    print(f"{name} * {quantity} = ${item_total:.2f}")
+    
+#Display final summary
+print(f"Your total for today is: ${order_total:.2f}")
