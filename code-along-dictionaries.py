@@ -43,7 +43,7 @@ menu = {
     4 : {"name":"Drink","price":1.99},
 }
 
-order_total = 0
+# order_total = 0
 
 # Print welcome statement
 print("Welcome to Python Burger!")
@@ -83,8 +83,11 @@ while True:
     if continue_order != "y":
         break
     
-#Calculate total
+name_price = {d["name"]: d["price"] for d in menu.values()}
 
+#Calculate total
+print("Order Summary")
+order_total = 0.0
 #use a for loop to go over orders dictionary
     #multiply item_qty and item price 
     #item_qty from orders dictionary
@@ -92,14 +95,12 @@ while True:
     #item_total = item_price * item_qty
     #print item_name, item_qty, item_total
     #add item_total to order_total 
-    
+#print order_total 
 for name, quantity in order.items():
+    price = name_price[name]
+    item_total = price * quantity
+    order_total += item_total
+    print(f"{name} * {quantity} = ${item_total:.2f}")
     
-    print(name, quantity)
-
-
-
-#print order_total
-
-
 #Display final summary
+print(f"Your total for today is: ${order_total:.2f}")
