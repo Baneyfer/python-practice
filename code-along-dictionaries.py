@@ -75,3 +75,10 @@ while True:
         print("That is not a valid menu item.")
             
     print(order)
+
+# Yes/No break loop or stay in
+    continue_order = input("Would you like to continue ordering? y/n: ")
+    continue_order[0].lower()
+    
+    if continue_order != "y":
+        break
