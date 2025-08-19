@@ -45,6 +45,22 @@ menu = {
 
 # order_total = 0
 
+
+# Functions 
+def print_menu():
+        print("Menu")
+        for item_no, details in menu.items():
+            print(f"{item_no}. {details['name']} - ${details['price']}")
+
+def add_order():
+        if item_choice in menu:
+            item_name = menu[item_choice]['name']
+        
+        if item_name in order:
+          order[item_name] += item_qty  
+        else:
+            order[item_name] = item_qty
+
 # Print welcome statement
 print("Welcome to Python Burger!")
 
@@ -52,15 +68,14 @@ print("Welcome to Python Burger!")
 while True:
 
 #  Display menu items - (print statement) - for loop initiate menu_items
-    print("Menu")
-    for item_no, details in menu.items():
-        print(f"{item_no}. {details['name']} - ${details['price']}")
+    print_menu()
 
 # Prompt menu selection (user input)
     item_choice = (int(input('Choose item number: ')))
 
 # Prompt qty 
     item_qty = (int(input('Enter quantity: ')))
+    
 #add order
     
     if item_choice in menu:
@@ -77,8 +92,7 @@ while True:
     print(order)
 
 # Yes/No break loop or stay in
-    continue_order = input("Would you like to continue ordering? y/n: ")
-    continue_order[0].lower()
+    continue_order = input("Would you like to continue ordering? y/n: ").lower()
     
     if continue_order != "y":
         break
@@ -104,3 +118,12 @@ for name, quantity in order.items():
     
 #Display final summary
 print(f"Your total for today is: ${order_total:.2f}")
+
+# open reciept.txt file in write mode
+# write pythonburger's reciept 
+# write each item_name and quantity and total
+# write "Your total for today" order total
+# close reciept.txt file
+f = open('reciept.txt', 'a')
+f.write(f'Your total for today is: ${order_total:.2f}' + '\n')
+f.close
