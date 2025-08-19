@@ -1,4 +1,4 @@
-# Restaurant pseudo code
+# Begin restaraunt ordering system
 order = {
     }
 
