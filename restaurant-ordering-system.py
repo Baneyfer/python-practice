@@ -25,6 +25,13 @@ def add_order():
         else:
             order[item_name] = item_qty
 
+def order_more():
+    continue_order = input("Would you like to continue ordering? y/n: ").lower()
+    if continue_order != "y":
+        return False
+    else: 
+        return True
+
 # Print welcome statement
 print("Welcome to Python Burger!")
 
@@ -43,14 +50,18 @@ while True:
 # Add order
     add_order()
     
+# Add order more
+    if order_more() == False:
+        break
+    
 # Print order so far        
     print(order)
     
 # Continue order break loop or stay in
-    continue_order = input("Would you like to continue ordering? y/n: ").lower()
+    # continue_order = input("Would you like to continue ordering? y/n: ").lower()
     
-    if continue_order != "y":
-        break
+    # if continue_order != "y":
+    #     break
     
 name_price = {d["name"]: d["price"] for d in menu.values()}
 
