@@ -86,12 +86,12 @@ for name, quantity in order.items():
 #Display final summary
 print(f"Your total for today is: ${order_total:.2f}")
 
-# Generate reciept
-    # open reciept.txt file in write mode
-    # write pythonburger's reciept 
+# Generate receipt
+    # open receipt.txt file in write mode
+    # write pythonburger's receipt 
     # write each item_name and quantity and total
     # write "Your total for today" order total
-    # close reciept.txt file
-f = open('reciept.txt', 'a')
+    # close receipt.txt file
+f = open('receipt.txt', 'a')
 f.write(f'Your total for today is: ${order_total:.2f}' + '\n')
 f.close
